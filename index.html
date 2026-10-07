@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fountasy Football</title>
+<style>
+:root{--bg:#0b1020;--card:#151c31;--muted:#8f9bb3;--text:#f5f7fb;--accent:#66e3b4;--warn:#ffcf5c;--bad:#ff6b7a;--line:#26304c}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#080c18,#10172a);color:var(--text)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 18px}.top{position:sticky;top:0;z-index:5;background:rgba(8,12,24,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:22px;min-height:68px}.brand{font-weight:900;letter-spacing:.04em;margin-right:auto}.brand span{color:var(--accent)}.links{display:flex;gap:18px;font-size:14px;color:#c7cfdf}.links a:hover{color:white}
+.hero{padding:52px 0 22px}.eyebrow{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:.15em}.hero h1{font-size:clamp(38px,7vw,76px);line-height:.95;margin:10px 0 14px;max-width:900px}.hero p{color:var(--muted);max-width:720px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:18px 0}.card{background:rgba(21,28,49,.92);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 16px 40px rgba(0,0,0,.18)}.span8{grid-column:span 8}.span4{grid-column:span 4}.span6{grid-column:span 6}.span12{grid-column:span 12}
+.kicker{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase}.big{font-size:34px;font-weight:900;margin:7px 0}.muted{color:var(--muted)}.pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#202a46;color:#dbe2f1;font-size:12px;font-weight:800}.pill.good{color:var(--accent)}.pill.bad{color:var(--bad)}
+.row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.rank{width:28px;font-weight:900;color:var(--muted)}.grow{flex:1}.score{font-weight:900}.sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:8px}.sectionTitle h2{margin:0;font-size:22px}.award{padding:14px 0}.award strong{display:block;margin-bottom:4px}.award .emoji{font-size:24px;margin-right:8px}
+.empty{border:1px dashed #3a4565;border-radius:14px;padding:18px;color:var(--muted);margin-top:12px}.footer{text-align:center;color:#73809a;padding:52px 18px 84px;font-size:13px}.footer strong{color:#cbd3e3}
+.status{display:flex;gap:8px;align-items:center;margin-top:16px}.dot{width:8px;height:8px;border-radius:50%;background:var(--warn)}
+button{background:var(--accent);color:#07120e;border:0;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}.error{color:#ff9ca6;white-space:pre-wrap;font-size:13px}
+@media(max-width:800px){.links{display:none}.span8,.span4,.span6{grid-column:span 12}.hero{padding-top:34px}.hero h1{font-size:46px}.grid{gap:12px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><div class="brand"><span>FOUNTASY</span> FOOTBALL</div><nav class="links"><a href="#home">Home</a><a href="#power">Power Rankings</a><a href="#whatif">What If?</a><a href="#managers">Managers</a><a href="#records">Records</a><a href="#transactions">Transactions</a><a href="#weekly">Weekly</a></nav></div></header>
+<main id="home" class="wrap">
+<section class="hero"><div class="eyebrow">2026 LEAGUE HQ</div><h1>Numbers don't lie.<br>Managers definitely do.</h1><p>Live Sleeper-powered analytics for Fountasy Football — standings, all-play performance, matchup luck, weekly crimes, and enough evidence to support irresponsible group-chat allegations.</p><div class="status"><span class="dot" id="dot"></span><span class="muted" id="status">Connecting to Sleeper…</span></div></section>
+<section class="grid">
+<div class="card span8"><div class="sectionTitle"><h2>League standings</h2><span class="pill" id="leagueName">Fountasy Football</span></div><div id="standings"><div class="empty">Waiting for league data…</div></div></div>
+<div class="card span4"><div class="kicker">Fount Intelligence</div><div class="big" id="week">Week —</div><div class="muted">Current regular-season snapshot.</div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><div class="kicker">FAAB economy</div><div class="big" id="faab">$200</div><div class="muted">Starting budget configured from league settings when available.</div></div>
+<div id="power" class="card span6"><div class="sectionTitle"><h2>📊 Power Rankings</h2><span class="pill good">COMING ONLINE</span></div><p class="muted">Record + scoring + all-play + recent form. Fraud Watch will live here.</p><div class="empty">Analytics engine hooks are ready for weekly matchup data.</div></div>
+<div id="whatif" class="card span6"><div class="sectionTitle"><h2>🔀 What If?</h2><span class="pill bad">NO EXCUSES</span></div><p class="muted">Compare any team's weekly score against every other team, replay head-to-head seasons, and swap schedules.</p><div class="award"><strong>💀 ROBBED</strong><span class="muted">Lost despite beating ≥75% of the league.</span></div><div class="award"><strong>🚨 HIGHWAY ROBBERY</strong><span class="muted">Won despite losing to ≥75% of the league.</span></div></div>
+<div id="managers" class="card span4"><h2>👤 Managers</h2><p class="muted">Individual profiles, trends, rivalries, trophy cases and halls of shame.</p><div id="managerCount" class="big">—</div><span class="muted">Fount degenerates identified</span></div>
+<div id="records" class="card span4"><h2>🏆 Records</h2><p class="muted">High scores, low scores, blowouts, photo finishes, streaks and eventual all-time history.</p><span class="pill">V1</span></div>
+<div id="transactions" class="card span4"><h2>💰 Transactions</h2><p class="muted">FAAB spending, adds, drops, trades, bargains and crimes against roster construction.</p><span class="pill">V1</span></div>
+<div id="weekly" class="card span12"><div class="sectionTitle"><h2>📰 The Fount Report</h2><span class="pill">WEEKLY</span></div><p class="muted">Team of the Week · Robbed · Highway Robbery · Bench Disaster · Biggest Blowout · Photo Finish · Waiver Move · Power Ranking Risers/Fallers</p><div class="empty">Once matchup history loads, this becomes the weekly newsroom.</div><div id="err" class="error"></div></div>
+</section>
+</main>
+<footer class="footer"><strong>Powered by data. Ruined by Chris Collinsworth.</strong><br>Fountasy Football Analytics · League 1312077323352182784</footer>
+<script>
+const LEAGUE='1312077323352182784'; const API='https://api.sleeper.app/v1';
+const el=id=>document.getElementById(id);
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+async function get(path){const r=await fetch(API+path);if(!r.ok)throw new Error(`${r.status} ${r.statusText}`);return r.json();}
+async function boot(){try{
+ const [league,users,rosters]=await Promise.all([get(`/league/${LEAGUE}`),get(`/league/${LEAGUE}/users`),get(`/league/${LEAGUE}/rosters`)]);
+ el('leagueName').textContent=league.name||'Fountasy Football'; el('week').textContent=`Week ${league.settings?.leg ?? '—'}`; el('faab').textContent=`$${league.settings?.waiver_budget ?? 200}`; el('managerCount').textContent=users.length;
+ const userMap=Object.fromEntries(users.map(u=>[u.user_id,u]));
+ const sorted=[...rosters].sort((a,b)=>{const aw=a.settings?.wins||0,bw=b.settings?.wins||0;if(bw!==aw)return bw-aw;return (b.settings?.fpts||0)-(a.settings?.fpts||0)});
+ el('standings').innerHTML=sorted.map((r,i)=>{const u=userMap[r.owner_id]||{};const name=u.metadata?.team_name||u.display_name||`Roster ${r.roster_id}`;const s=r.settings||{};const pf=(s.fpts||0)+(s.fpts_decimal||0)/100;return `<div class="row"><div class="rank">${i+1}</div><div class="grow"><strong>${esc(name)}</strong><div class="muted">${s.wins||0}-${s.losses||0}${s.ties?'-'+s.ties:''}</div></div><div class="score">${pf.toFixed(2)} PF</div></div>`}).join('');
+ el('dot').style.background='var(--accent)';el('status').textContent=`Live league data connected · ${users.length} managers`;
+ }catch(e){el('dot').style.background='var(--bad)';el('status').textContent='Prototype loaded; live Sleeper data could not connect in this environment.';el('err').textContent='\nData connection note: '+e.message+'\nWhen hosted in a normal browser environment, this page will retry the public Sleeper API directly.';}}
+boot();
+</script>
+</body></html>
